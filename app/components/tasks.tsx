@@ -47,7 +47,7 @@ const Tasks = () => {
                             width={20} 
                             height={20} 
                             onClick={() => handleDeleteTask(index)}
-                            className="cursor-pointer"
+                            className="cursor-pointer ml-auto"
                         />
                     </li>
                 ))}
