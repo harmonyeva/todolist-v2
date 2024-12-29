@@ -20,7 +20,7 @@ const Tasks = () => {
     }
 
     return (
-        <div className="flex flex-wrap items-center justify-center">
+        <div className="flex flex-row flex-wrap justify-center items-center mt-4">
             <input 
                 type="text" 
                 placeholder="add a new task" 
@@ -31,23 +31,23 @@ const Tasks = () => {
                         handleAddTask();
                     }
                 }}
-                className=" border-2 border-black rounded-md p-2 "
+                className=" border-2 border-black rounded-md p-2 w-52"
             />
             <button 
                 onClick={handleAddTask}
                 className="text-4xl mb-2 ml-2"
             >+</button>
-            <ul>
+            <ul className="flex flex-col items-center mt-4 w-full">
                 {tasks.map((task, index) => (
-                    <li key={index}>
-                        {task}
+                    <li key={index} className="flex items-center border-2 border-black rounded-md p-2 w-60 mt-2">
+                        <span>{task}</span>
                         <Image 
                             src={bin} 
                             alt="delete" 
                             width={20} 
                             height={20} 
                             onClick={() => handleDeleteTask(index)}
-                            className="inline-block"
+                            className="cursor-pointer"
                         />
                     </li>
                 ))}
