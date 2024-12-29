@@ -20,7 +20,7 @@ const Tasks = () => {
     }
 
     return (
-        <div>
+        <div className="flex flex-wrap items-center justify-center">
             <input 
                 type="text" 
                 placeholder="add a new task" 
@@ -31,8 +31,12 @@ const Tasks = () => {
                         handleAddTask();
                     }
                 }}
+                className=" border-2 border-black rounded-md p-2 "
             />
-            <button onClick={handleAddTask}>add</button>
+            <button 
+                onClick={handleAddTask}
+                className="text-4xl mb-2 ml-2"
+            >+</button>
             <ul>
                 {tasks.map((task, index) => (
                     <li key={index}>

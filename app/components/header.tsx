@@ -1,7 +1,16 @@
+"use client";
+
+import Image from "next/image";
+import background from "@/public/background.png";
+
 const Header = () => {
     return (
         <div>
-            <h1>to do list</h1>
+            <Image 
+            src={background} 
+            alt="background" 
+            />
+            <h1 className="text-center text-5xl">୨୧ to do ୨୧</h1>
         </div>
     )
 }
