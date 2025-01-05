@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { themeContext } from "./themeContext"; 
 import Image from "next/image";
 import bin from "@/public/bin.png";
+import wbin from "@/public/wbin.png"
 
 const Tasks = () => {
+    const theme = useContext(themeContext);
+
     const [task, setTask] = useState("");
     const [tasks, setTasks] = useState<string[]>([]);
 
@@ -42,7 +46,7 @@ const Tasks = () => {
                     <li key={index} className="flex items-center border-2 border-black rounded-md p-2 w-60 mt-2">
                         <span>{task}</span>
                         <Image 
-                            src={bin} 
+                            src={theme === "light" ? bin : wbin} 
                             alt="delete" 
                             width={20} 
                             height={20} 
